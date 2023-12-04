@@ -1,0 +1,272 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj7lqdyycf1ya"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_3j1uf"]
+[ext_resource type="StyleBox" uid="uid://df2wsc36p8q86" path="res://work/day02/prompt_style.tres" id="2_10wpq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hx22d"]
+bg_color = Color(0.054902, 0.054902, 0.054902, 0.819608)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qdv0y"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_qukyp"]
+font_names = PackedStringArray("Monospace")
+
+[node name="MainMenu" type="MarginContainer"]
+custom_minimum_size = Vector2(200, 200)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3j1uf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+text = "Advent Workspace"
+vertical_alignment = 1
+
+[node name="NewDirectory" type="Button" parent="HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = " + "
+
+[node name="DirList" type="ItemList" parent="HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+text = "Scripts"
+vertical_alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="NewScript" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/BoxContainer"]
+layout_mode = 2
+text = " + "
+
+[node name="Edit" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/BoxContainer"]
+layout_mode = 2
+text = "Edit"
+
+[node name="ScriptList" type="ItemList" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+text = "Inputs"
+vertical_alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="NewInput" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = " + "
+
+[node name="OpenInputEditor" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/BoxContainer"]
+layout_mode = 2
+text = "Edit"
+
+[node name="RunButton" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Plz Work"
+
+[node name="InputList" type="ItemList" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+text = "Output"
+vertical_alignment = 1
+
+[node name="ClearButton" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Clear"
+
+[node name="Output" type="TextEdit" parent="HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+editable = false
+scroll_smooth = true
+
+[node name="Prompt" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hx22d")
+
+[node name="CenterContainer" type="CenterContainer" parent="Prompt"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Prompt/CenterContainer"]
+layout_mode = 2
+
+[node name="PromptValue" type="LineEdit" parent="Prompt/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(350, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("2_10wpq")
+theme_override_styles/focus = ExtResource("2_10wpq")
+theme_override_styles/read_only = ExtResource("2_10wpq")
+placeholder_text = "Prompt Here..."
+
+[node name="InputUI" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qdv0y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InputUI"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InputUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="InputUI/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="InputEditorPathLabel" type="Label" parent="InputUI/VBoxContainer/HBoxContainer/BoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BoxContainer2" type="BoxContainer" parent="InputUI/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="InputSaveButton" type="Button" parent="InputUI/VBoxContainer/HBoxContainer/BoxContainer2"]
+layout_mode = 2
+text = "Save"
+
+[node name="InputCloseButton" type="Button" parent="InputUI/VBoxContainer/HBoxContainer/BoxContainer2"]
+layout_mode = 2
+text = "Close"
+
+[node name="InputEditor" type="TextEdit" parent="InputUI/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_qukyp")
+
+[node name="ScriptUI" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qdv0y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScriptUI"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScriptUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="ScriptUI/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ScriptEditorPathLabel" type="Label" parent="ScriptUI/VBoxContainer/HBoxContainer/BoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BoxContainer2" type="BoxContainer" parent="ScriptUI/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="ScriptRunButton" type="Button" parent="ScriptUI/VBoxContainer/HBoxContainer/BoxContainer2"]
+layout_mode = 2
+text = "Run"
+
+[node name="ScriptSaveButton" type="Button" parent="ScriptUI/VBoxContainer/HBoxContainer/BoxContainer2"]
+layout_mode = 2
+text = "Save"
+
+[node name="ScriptCloseButton" type="Button" parent="ScriptUI/VBoxContainer/HBoxContainer/BoxContainer2"]
+layout_mode = 2
+text = "Close"
+
+[node name="ScriptEditor" type="CodeEdit" parent="ScriptUI/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+caret_blink = true
+highlight_all_occurrences = true
+highlight_current_line = true
+draw_control_chars = true
+draw_tabs = true
+draw_spaces = true
+symbol_lookup_on_click = true
+gutters_draw_line_numbers = true
+code_completion_enabled = true
+indent_use_spaces = true
+indent_automatic = true
+auto_brace_completion_highlight_matching = true
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/HBoxContainer/NewDirectory" to="." method="_on_new_directory_pressed"]
+[connection signal="item_selected" from="HBoxContainer/VBoxContainer2/DirList" to="." method="_on_dir_list_item_selected"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/BoxContainer/NewScript" to="." method="_on_new_script_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/BoxContainer/Edit" to="." method="_on_edit_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/BoxContainer/NewInput" to="." method="_on_new_input_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/BoxContainer/OpenInputEditor" to="." method="_on_open_input_editor_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/BoxContainer/RunButton" to="." method="_on_run_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer2/ClearButton" to="." method="_on_clear_button_pressed"]
+[connection signal="pressed" from="InputUI/VBoxContainer/HBoxContainer/BoxContainer2/InputSaveButton" to="." method="_on_input_save_button_pressed"]
+[connection signal="pressed" from="InputUI/VBoxContainer/HBoxContainer/BoxContainer2/InputCloseButton" to="." method="_on_input_close_button_pressed"]
+[connection signal="pressed" from="ScriptUI/VBoxContainer/HBoxContainer/BoxContainer2/ScriptRunButton" to="." method="_on_script_run_button_pressed"]
+[connection signal="pressed" from="ScriptUI/VBoxContainer/HBoxContainer/BoxContainer2/ScriptSaveButton" to="." method="_on_script_save_button_pressed"]
+[connection signal="pressed" from="ScriptUI/VBoxContainer/HBoxContainer/BoxContainer2/ScriptCloseButton" to="." method="_on_script_close_button_pressed"]
